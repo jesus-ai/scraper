@@ -6,7 +6,6 @@ package me.duncte123.biblescraper;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
@@ -14,6 +13,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class App {
     private static final OkHttpClient CLIENT = new OkHttpClient();
@@ -91,35 +92,89 @@ public class App {
 
     private App() throws Exception {
         File output = new File("bible.txt");
-        int passageIndex = 0;
 
-        createFileIfNotExists(output);
+        createFileAndDeleteIfExists(output);
 
         try (FileWriter fw = new FileWriter(output)) {
             try (BufferedWriter writer = new BufferedWriter(fw)) {
-                // loop
-                JSONObject json = loadPage(passageIndex);
+                for (int index = 0; index < PASSAGES.length; index++) {
+                    System.out.println(PASSAGES[index]);
+                    JSONObject json = loadPage(index);
 
-                if (json == null) {
-                    return;
+                    if (json == null) {
+                        continue;
+                    }
+
+                    String bookName = json.getString("book_name");
+                    JSONObject books = json.getJSONObject("book");
+                    List<String> bookNames = books.names()
+                            .toList()
+                            .stream()
+                            .map(String::valueOf)
+                            .map(Integer::valueOf)
+                            .sorted()
+                            .map(String::valueOf)
+                            .collect(Collectors.toList());
+
+                    for (String bookNr : bookNames) {
+//                    String bookNr = (String) item;
+                        System.out.println(bookNr);
+                        JSONObject book = books.getJSONObject(bookNr).getJSONObject("chapter");
+                        writer.write(
+                                parseBook(bookName, bookNr, book)
+                        );
+                    }
                 }
-
-                String bookName = json.getString("book_name");
-                JSONObject book = json.getJSONObject("book");
-                JSONArray bookNames = book.names();
-                int bookNameCount = bookNames.length();
 
             }
         }
     }
 
-    private void createFileIfNotExists(File file) throws IOException {
-        if (!file.exists()) {
-            file.createNewFile();
+    private String parseBook(String bookName, String bookNr, JSONObject book) {
+        StringBuilder builder = new StringBuilder();
+        List<String> verseNumbers = book.names()
+                .toList()
+                .stream()
+                .map(String::valueOf)
+                .map(Integer::valueOf)
+                .sorted()
+                .map(String::valueOf)
+                .collect(Collectors.toList());
+
+        System.out.println(verseNumbers);
+
+        System.out.println(book);
+
+        for (String verseNum : verseNumbers) {
+//            String verseNum = (String) item;
+            System.out.println(verseNum);
+            String verse = book.getJSONObject(verseNum).getString("verse").replaceAll("\r\n", "\n");
+
+            builder.append(bookName)
+                    .append(' ')
+                    .append(bookNr)
+                    .append(':')
+                    .append(verseNum)
+                    .append(' ')
+                    .append(verse);
         }
+
+        return builder.toString();
+    }
+
+    private void createFileAndDeleteIfExists(File file) throws IOException {
+        if (file.exists()) {
+            file.delete();
+        }
+
+        file.createNewFile();
     }
 
     private JSONObject parseJSON(String in) {
+        if (in == null || in.equalsIgnoreCase("NULL")) {
+            return null;
+        }
+
         return new JSONObject(
                 new JSONTokener(
                         in.substring(1, in.length() - 2)
@@ -140,12 +195,6 @@ public class App {
             e.printStackTrace();
             return null;
         }
-    }
-
-    private String parseBook(String bookName, JSONObject book) {
-
-
-        return null;
     }
 
     public static void main(String[] args) throws Exception {
