@@ -6,7 +6,6 @@ package me.duncte123.biblescraper;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
@@ -14,6 +13,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class App {
     private static final OkHttpClient CLIENT = new OkHttpClient();
@@ -91,42 +92,111 @@ public class App {
 
     private App() throws Exception {
         File output = new File("bible.txt");
-        int passageIndex = 0;
 
-        createFileIfNotExists(output);
+        createFileAndDeleteIfExists(output);
 
         try (FileWriter fw = new FileWriter(output)) {
             try (BufferedWriter writer = new BufferedWriter(fw)) {
-                // loop
-                JSONObject json = loadPage(passageIndex);
+                for (int index = 0; index < PASSAGES.length; index++) {
+                    System.out.println(PASSAGES[index]);
 
-                if (json == null) {
-                    return;
+                    // Get the data for a verse
+                    JSONObject json = loadPage(index);
+
+                    // Skip this verse if there is no data
+                    if (json == null) {
+                        continue;
+                    }
+
+                    String bookName = json.getString("book_name");
+                    JSONObject books = json.getJSONObject("book");
+                    List<String> bookNames = parseNumberList(books);
+
+                    // loop over all the book numbers
+                    for (String bookNr : bookNames) {
+                        System.out.println(bookNr);
+                        JSONObject book = books.getJSONObject(bookNr).getJSONObject("chapter");
+                        // Write the number to the file
+                        writer.write(
+                                parseBook(bookName, bookNr, book)
+                        );
+                    }
                 }
-
-                String bookName = json.getString("book_name");
-                JSONObject book = json.getJSONObject("book");
-                JSONArray bookNames = book.names();
-                int bookNameCount = bookNames.length();
 
             }
         }
     }
 
-    private void createFileIfNotExists(File file) throws IOException {
-        if (!file.exists()) {
-            file.createNewFile();
+    /**
+     * Parses a book from the api to a string that we insert into the file
+     *
+     * @param bookName The name of the book
+     * @param bookNr The number if the book
+     * @param book the book data itself
+     * @return a string with the book data parsed to our format
+     */
+    private String parseBook(String bookName, String bookNr, JSONObject book) {
+        StringBuilder builder = new StringBuilder();
+        // Get a list of all the verses
+        List<String> verseNumbers = parseNumberList(book);
+
+        System.out.println(verseNumbers);
+        System.out.println(book);
+
+        for (String verseNum : verseNumbers) {
+            System.out.println(verseNum);
+            String verse = book.getJSONObject(verseNum).getString("verse").replaceAll("\r\n", "\n");
+
+            // Write the verse to the string in a specified format
+            builder.append(bookName)
+                    .append(' ')
+                    .append(bookNr)
+                    .append(':')
+                    .append(verseNum)
+                    .append(' ')
+                    .append(verse);
         }
+
+        return builder.toString();
     }
 
-    private JSONObject parseJSON(String in) {
-        return new JSONObject(
-                new JSONTokener(
-                        in.substring(1, in.length() - 2)
-                )
-        );
+    /**
+     * Checks if the output file exists and if it does deletes it and creates it again
+     *
+     * @param file the target file
+     * @throws IOException when something goes wrong
+     */
+    private void createFileAndDeleteIfExists(File file) throws IOException {
+        if (file.exists()) {
+            file.delete();
+        }
+
+        file.createNewFile();
     }
 
+    /**
+     *  Parses a number index to a list of strings with the numbers properly sorted
+     *
+     * @param json The json object with the keys that are numbers
+     * @return the parsed list
+     */
+    private List<String> parseNumberList(JSONObject json) {
+        return json.names()
+                .toList()
+                .stream()
+                .map(String::valueOf)
+                .map(Integer::valueOf)
+                .sorted()
+                .map(String::valueOf)
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Requests json data from the website and returns it as json object
+     *
+     * @param index the index of the current passage to fetch
+     * @return a json object with the data or null
+     */
     private JSONObject loadPage(int index) {
         Request request = new Request.Builder()
                 .url(BASE_URL + PASSAGES[index])
@@ -135,17 +205,32 @@ public class App {
 
         try (Response response = CLIENT.newCall(request).execute()) {
             //noinspection ConstantConditions
-            return parseJSON(response.body().string());
+            JSONObject json = parseJSON(response.body().string());
+            // Close the response when we are done
+            response.close();
+            return json;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    private String parseBook(String bookName, JSONObject book) {
+    /**
+     * Parses a response from the api to a json object
+     *
+     * @param in the input json
+     * @return a json object with the json of the page or null
+     */
+    private JSONObject parseJSON(String in) {
+        if (in == null || in.equalsIgnoreCase("NULL")) {
+            return null;
+        }
 
-
-        return null;
+        return new JSONObject(
+                new JSONTokener(
+                        in.substring(1, in.length() - 2)
+                )
+        );
     }
 
     public static void main(String[] args) throws Exception {
