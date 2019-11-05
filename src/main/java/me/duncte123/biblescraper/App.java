@@ -157,7 +157,18 @@ public class App {
                     .append(verse);
         }
 
-        return builder.toString();
+        return builder.toString()
+                // Just to be safe
+                .replaceAll("christian", "Pastafarian")
+                .replaceAll("Christian", "Pastafarian")
+                .replaceAll("jesus christ", "Flying Spaghetti Monster")
+                .replaceAll("Jesus Christ", "Flying Spaghetti Monster")
+                .replaceAll("God", "FSM")
+                .replaceAll("god", "FSM")
+                .replaceAll("JESUS", "FSM")
+                .replaceAll("jesus", "Flying Spaghetti Monster")
+                .replaceAll("Jesus", "Flying Spaghetti Monster")
+                ;
     }
 
     /**
