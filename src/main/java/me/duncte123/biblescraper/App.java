@@ -164,6 +164,7 @@ public class App {
                 .replaceAll("jesus christ", "Flying Spaghetti Monster")
                 .replaceAll("Jesus Christ", "Flying Spaghetti Monster")
                 .replaceAll("God", "FSM")
+                .replaceAll("GOD", "FSM")
                 .replaceAll("god", "FSM")
                 .replaceAll("JESUS", "FSM")
                 .replaceAll("jesus", "Flying Spaghetti Monster")
