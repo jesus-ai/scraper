@@ -6,177 +6,62 @@ package me.duncte123.biblescraper;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import org.json.JSONObject;
-import org.json.JSONTokener;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.function.Consumer;
 
+/**
+ * @author duncte123
+ * Created on 04-11-2019
+ *
+ * Data comes from http://www.saidwhat.co.uk/proverb/viewall.php
+ */
 public class App {
     private static final OkHttpClient CLIENT = new OkHttpClient();
-    private static final String BASE_URL = "http://getbible.net/json?p=";
-    /// <editor-fold desc="PASSAGES">
-    private static final String[] PASSAGES = {
-            "Genesis",
-            "Exodus",
-            "Leviticus",
-            "Numbers",
-            "Deuteronomy",
-            "Joshua",
-            "Judges",
-            "Ruth",
-            "1 Samuel",
-            "2 Samuel",
-            "1 Kings",
-            "2 Kings",
-            "1 Chronicles",
-            "2 Chronicles",
-            "Ezra",
-            "Nehemiah",
-            "Esther",
-            "Job",
-            "Psalm",
-            "Proverbs",
-            "Ecclesiastes",
-            "Song of Solomon",
-            "Isaiah",
-            "Jeremiah",
-            "Lamentations",
-            "Ezekiel",
-            "Daniel",
-            "Hosea",
-            "Joel",
-            "Amos",
-            "Obadiah",
-            "Jonah",
-            "Micah",
-            "Nahum",
-            "Habakkuk",
-            "Zephaniah",
-            "Haggai",
-            "Zechariah",
-            "Malachi",
-            "Matthew",
-            "Mark",
-            "Luke",
-            "John",
-            "Acts",
-            "Romans",
-            "1 Corinthians",
-            "2 Corinthians",
-            "Galatians",
-            "Ephesians",
-            "Philippians",
-            "Colossians",
-            "1 Thessalonians",
-            "2 Thessalonians",
-            "1 Timothy",
-            "2 Timothy",
-            "Titus",
-            "Philemon",
-            "Hebrews",
-            "James",
-            "1 Peter",
-            "2 Peter",
-            "1 John",
-            "2 John",
-            "3 John",
-            "Jude",
-            "Revelation",
-    };
-    /// </editor-fold>
+    //    private static final String BASE_URL = "https://en.wikipedia.org/wiki/List_of_proverbial_phrases";
+    private static final String BASE_URL = "http://www.saidwhat.co.uk/proverb/viewall.php";
 
     private App() throws Exception {
-        File output = new File("bible.txt");
+        File output = new File("output.txt");
 
         createFileAndDeleteIfExists(output);
 
         try (FileWriter fw = new FileWriter(output)) {
             try (BufferedWriter writer = new BufferedWriter(fw)) {
-                for (int index = 0; index < PASSAGES.length; index++) {
-                    System.out.println(PASSAGES[index]);
 
-                    // Get the data for a verse
-                    JSONObject json = loadPage(index);
+                // Get the data for a verse
+                Document doc = loadHTML();
 
-                    // Skip this verse if there is no data
-                    if (json == null) {
-                        continue;
-                    }
-
-                    String bookName = json.getString("book_name");
-                    JSONObject books = json.getJSONObject("book");
-                    List<String> bookNames = parseNumberList(books);
-
-                    // loop over all the book numbers
-                    for (String bookNr : bookNames) {
-                        System.out.println(bookNr);
-                        JSONObject book = books.getJSONObject(bookNr).getJSONObject("chapter");
-                        // Write the number to the file
-                        writer.write(
-                                parseBook(bookName, bookNr, book)
-                        );
-                    }
+                // Skip this verse if there is no data
+                if (doc == null) {
+                    return;
                 }
 
+                parseText(doc, (s) -> {
+                    try {
+                        writer.write(s);
+                        writer.write("\n");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
             }
         }
     }
 
     /**
-     * Parses a book from the api to a string that we insert into the file
-     *
-     * @param bookName The name of the book
-     * @param bookNr The number if the book
-     * @param book the book data itself
-     * @return a string with the book data parsed to our format
-     */
-    private String parseBook(String bookName, String bookNr, JSONObject book) {
-        StringBuilder builder = new StringBuilder();
-        // Get a list of all the verses
-        List<String> verseNumbers = parseNumberList(book);
-
-        System.out.println(verseNumbers);
-        System.out.println(book);
-
-        for (String verseNum : verseNumbers) {
-            System.out.println(verseNum);
-            String verse = book.getJSONObject(verseNum).getString("verse").replaceAll("\r\n", "\n");
-
-            // Write the verse to the string in a specified format
-            builder.append(bookName)
-                    .append(' ')
-                    .append(bookNr)
-                    .append(':')
-                    .append(verseNum)
-                    .append(' ')
-                    .append(verse);
-        }
-
-        return builder.toString()
-                // Just to be safe
-                .replaceAll("christian", "Pastafarian")
-                .replaceAll("Christian", "Pastafarian")
-                .replaceAll("jesus christ", "Flying Spaghetti Monster")
-                .replaceAll("Jesus Christ", "Flying Spaghetti Monster")
-                .replaceAll("God", "FSM")
-                .replaceAll("GOD", "FSM")
-                .replaceAll("god", "FSM")
-                .replaceAll("JESUS", "FSM")
-                .replaceAll("jesus", "Flying Spaghetti Monster")
-                .replaceAll("Jesus", "Flying Spaghetti Monster")
-                ;
-    }
-
-    /**
      * Checks if the output file exists and if it does deletes it and creates it again
      *
-     * @param file the target file
-     * @throws IOException when something goes wrong
+     * @param file
+     *         the target file
+     *
+     * @throws IOException
+     *         when something goes wrong
      */
     private void createFileAndDeleteIfExists(File file) throws IOException {
         if (file.exists()) {
@@ -187,37 +72,43 @@ public class App {
     }
 
     /**
-     *  Parses a number index to a list of strings with the numbers properly sorted
+     * Gets the loaded document and parses it into the saying that we need
      *
-     * @param json The json object with the keys that are numbers
-     * @return the parsed list
+     * @param doc
+     *         The html document
+     * @param cb
+     *         The callback that gets called when we need to write something to the file
      */
-    private List<String> parseNumberList(JSONObject json) {
-        return json.names()
-                .toList()
-                .stream()
-                .map(String::valueOf)
-                .map(Integer::valueOf)
-                .sorted()
-                .map(String::valueOf)
-                .collect(Collectors.toList());
+    private void parseText(Document doc, Consumer<String> cb) {
+        final String[] items = doc.select("div#centercontent").html().split("\n");
+
+        System.out.println(items.length);
+
+        for (String item : items) {
+            if (item.startsWith("<br>")) {
+                final String parsed = item.replaceFirst("<br>", "").trim();
+
+                if (!parsed.isBlank()) {
+                    cb.accept(parsed);
+                }
+            }
+        }
     }
 
     /**
      * Requests json data from the website and returns it as json object
      *
-     * @param index the index of the current passage to fetch
      * @return a json object with the data or null
      */
-    private JSONObject loadPage(int index) {
+    private Document loadHTML() {
         Request request = new Request.Builder()
-                .url(BASE_URL + PASSAGES[index])
+                .url(BASE_URL)
                 .get()
                 .build();
 
         try (Response response = CLIENT.newCall(request).execute()) {
             //noinspection ConstantConditions
-            JSONObject json = parseJSON(response.body().string());
+            Document json = parseHTML(response.body().string());
             // Close the response when we are done
             response.close();
             return json;
@@ -228,21 +119,19 @@ public class App {
     }
 
     /**
-     * Parses a response from the api to a json object
+     * Parses a response from the api to a Document
      *
-     * @param in the input json
-     * @return a json object with the json of the page or null
+     * @param in
+     *         the input html
+     *
+     * @return the parsed html document
      */
-    private JSONObject parseJSON(String in) {
+    private Document parseHTML(String in) {
         if (in == null || in.equalsIgnoreCase("NULL")) {
             return null;
         }
 
-        return new JSONObject(
-                new JSONTokener(
-                        in.substring(1, in.length() - 2)
-                )
-        );
+        return Jsoup.parse(in);
     }
 
     public static void main(String[] args) throws Exception {
