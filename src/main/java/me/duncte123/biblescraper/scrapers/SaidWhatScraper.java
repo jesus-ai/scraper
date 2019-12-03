@@ -12,6 +12,9 @@ public class SaidWhatScraper extends BaseScraper<Document> {
         super(url, fileName, Jsoup::parse);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected List<String> getUsableText() {
         final String[] items = this.getParsed().select("div#centercontent").html().split("\n");

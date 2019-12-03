@@ -12,6 +12,9 @@ public class PhrasesOrgScraper extends BaseScraper<Document> {
         super(url, fileName, Jsoup::parse);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected List<String> getUsableText() {
         Document doc = this.getParsed();
