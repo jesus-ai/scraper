@@ -18,6 +18,7 @@ public class PhrasesOrgScraper extends BaseScraper<Document> {
         final List<String> items = doc.select("p.phrase-list")
                 .stream()
                 .map(Element::text)
+                .map(String::trim)
                 .collect(Collectors.toList());
 
         System.out.println(items);

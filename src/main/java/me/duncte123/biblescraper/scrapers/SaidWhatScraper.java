@@ -21,7 +21,7 @@ public class SaidWhatScraper extends BaseScraper<Document> {
 
         for (String item : items) {
             if (item.startsWith("<br>")) {
-                final String parsed = item.replaceFirst("<br>", "").trim();
+                final String parsed = item.replaceAll("<br>", "").trim();
 
                 if (!parsed.isBlank()) {
                     output.add(parsed);
