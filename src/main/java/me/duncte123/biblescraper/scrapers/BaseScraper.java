@@ -14,9 +14,9 @@ import java.util.function.Function;
 
 public abstract class BaseScraper<T> {
     protected static final OkHttpClient CLIENT = new OkHttpClient();
-    private final String url;
     private final String fileName;
     private final Function<String, T> converter;
+    private String url;
     private T parsed;
 
     /**
@@ -55,6 +55,16 @@ public abstract class BaseScraper<T> {
     }
 
     /**
+     * Set the url in case the scraper needs this
+     *
+     * @param url
+     *         the new url to make requests with
+     */
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    /**
      * Writes the usable text to a file
      */
     private void writeToFile() {
@@ -88,7 +98,7 @@ public abstract class BaseScraper<T> {
     /**
      * Downloads the content of a webpage and parses it with our converter
      */
-    private void getAndParse() {
+    protected void getAndParse() {
         Request request = new Request.Builder()
                 .url(this.url)
                 .get()

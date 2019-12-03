@@ -3,21 +3,14 @@
  */
 package me.duncte123.biblescraper.scrapers;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class BibleScraper {
-    private static final OkHttpClient CLIENT = new OkHttpClient();
+public class BibleScraper extends BaseScraper<JSONObject> {
     private static final String BASE_URL = "http://getbible.net/json?p=";
     /// <editor-fold desc="PASSAGES">
     private static final String[] PASSAGES = {
@@ -90,39 +83,55 @@ public class BibleScraper {
     };
     /// </editor-fold>
 
-    private BibleScraper() throws Exception {
-        File output = new File("output.txt");
+    public BibleScraper() {
+        super(BASE_URL + PASSAGES[0], "parts/bible.txt", (in) -> {
+            System.out.println(in);
 
-        createFileAndDeleteIfExists(output);
+            if (in == null || in.equalsIgnoreCase("NULL")) {
+                return null;
+            }
 
-        try (FileWriter fw = new FileWriter(output)) {
-            try (BufferedWriter writer = new BufferedWriter(fw)) {
-                for (int index = 0; index < PASSAGES.length; index++) {
-                    System.out.println(PASSAGES[index]);
+            return new JSONObject(
+                    in.substring(1, in.length() - 2)
+            );
+        });
+    }
 
-                    // Get the data for a verse
-                    JSONObject json = loadPage(index);
+    @Override
+    protected List<String> getUsableText() {
+        List<String> verses = new ArrayList<>();
+        doParseLoop(verses);
 
-                    // Skip this verse if there is no data
-                    if (json == null) {
-                        continue;
-                    }
+        return verses;
+    }
 
-                    String bookName = json.getString("book_name");
-                    JSONObject books = json.getJSONObject("book");
-                    List<String> bookNames = parseNumberList(books);
+    private void doParseLoop(List<String> verses) {
+        for (String passage : PASSAGES) {
+            System.out.println(passage);
 
-                    // loop over all the book numbers
-                    for (String bookNr : bookNames) {
-                        System.out.println(bookNr);
-                        JSONObject book = books.getJSONObject(bookNr).getJSONObject("chapter");
-                        // Write the number to the file
-                        writer.write(
-                                parseBook(bookName, bookNr, book)
-                        );
-                    }
-                }
+            this.setUrl(BASE_URL + passage);
+            this.getAndParse();
 
+            // Get the data for a verse
+            JSONObject json = this.getParsed();
+
+            // Skip this verse if there is no data
+            if (json == null) {
+                continue;
+            }
+
+            String bookName = json.getString("book_name");
+            JSONObject books = json.getJSONObject("book");
+            List<String> bookNames = parseNumberList(books);
+
+            // loop over all the book numbers
+            for (String bookNr : bookNames) {
+                System.out.println(bookNr);
+                JSONObject book = books.getJSONObject(bookNr).getJSONObject("chapter");
+                // Write the number to the file
+                verses.add(
+                        parseBook(bookName, bookNr, book)
+                );
             }
         }
     }
@@ -157,33 +166,7 @@ public class BibleScraper {
                     .append(verse);
         }
 
-        return builder.toString()
-                // Just to be safe
-//                .replaceAll("christian", "Pastafarian")
-//                .replaceAll("Christian", "Pastafarian")
-//                .replaceAll("jesus christ", "Flying Spaghetti Monster")
-//                .replaceAll("Jesus Christ", "Flying Spaghetti Monster")
-//                .replaceAll("God", "FSM")
-//                .replaceAll("GOD", "FSM")
-//                .replaceAll("god", "FSM")
-//                .replaceAll("JESUS", "FSM")
-//                .replaceAll("jesus", "Flying Spaghetti Monster")
-//                .replaceAll("Jesus", "Flying Spaghetti Monster")
-                ;
-    }
-
-    /**
-     * Checks if the output file exists and if it does deletes it and creates it again
-     *
-     * @param file the target file
-     * @throws IOException when something goes wrong
-     */
-    private void createFileAndDeleteIfExists(File file) throws IOException {
-        if (file.exists()) {
-            file.delete();
-        }
-
-        file.createNewFile();
+        return builder.toString().trim();
     }
 
     /**
@@ -201,51 +184,5 @@ public class BibleScraper {
                 .sorted()
                 .map(String::valueOf)
                 .collect(Collectors.toList());
-    }
-
-    /**
-     * Requests json data from the website and returns it as json object
-     *
-     * @param index the index of the current passage to fetch
-     * @return a json object with the data or null
-     */
-    private JSONObject loadPage(int index) {
-        Request request = new Request.Builder()
-                .url(BASE_URL + PASSAGES[index])
-                .get()
-                .build();
-
-        try (Response response = CLIENT.newCall(request).execute()) {
-            //noinspection ConstantConditions
-            JSONObject json = parseJSON(response.body().string());
-            // Close the response when we are done
-            response.close();
-            return json;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    /**
-     * Parses a response from the api to a json object
-     *
-     * @param in the input json
-     * @return a json object with the json of the page or null
-     */
-    private JSONObject parseJSON(String in) {
-        if (in == null || in.equalsIgnoreCase("NULL")) {
-            return null;
-        }
-
-        return new JSONObject(
-                new JSONTokener(
-                        in.substring(1, in.length() - 2)
-                )
-        );
-    }
-
-    public static void main(String[] args) throws Exception {
-        new BibleScraper();
     }
 }

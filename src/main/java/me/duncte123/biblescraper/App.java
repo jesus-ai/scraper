@@ -3,6 +3,7 @@
  */
 package me.duncte123.biblescraper;
 
+import me.duncte123.biblescraper.scrapers.BibleScraper;
 import me.duncte123.biblescraper.scrapers.PhrasesOrgScraper;
 import me.duncte123.biblescraper.scrapers.SaidWhatScraper;
 
@@ -22,7 +23,8 @@ import java.util.stream.Collectors;
  */
 public class App {
     private App() throws IOException {
-        new PhrasesOrgScraper("https://www.phrases.org.uk/meanings/phrases-and-sayings-list.html", "parts/sayings.txt");
+        new BibleScraper();
+        /*new PhrasesOrgScraper("https://www.phrases.org.uk/meanings/phrases-and-sayings-list.html", "parts/sayings.txt");
         new PhrasesOrgScraper("https://www.phrases.org.uk/meanings/proverbs.html", "parts/proverbs.txt");
         new SaidWhatScraper("http://www.saidwhat.co.uk/proverb/viewall.php", "parts/proverbs-2.txt");
 
@@ -30,7 +32,7 @@ public class App {
                 "parts/sayings.txt",
                 "parts/proverbs.txt",
                 "parts/proverbs-2.txt"
-        );
+        );*/
     }
 
     /**
