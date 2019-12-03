@@ -3,138 +3,80 @@
  */
 package me.duncte123.biblescraper;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+import me.duncte123.biblescraper.scrapers.PhrasesOrgScraper;
+import me.duncte123.biblescraper.scrapers.SaidWhatScraper;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.function.Consumer;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * @author duncte123
  * Created on 04-11-2019
- *
- * Data comes from http://www.saidwhat.co.uk/proverb/viewall.php
  */
 public class App {
-    private static final OkHttpClient CLIENT = new OkHttpClient();
-    //    private static final String BASE_URL = "https://en.wikipedia.org/wiki/List_of_proverbial_phrases";
-    private static final String BASE_URL = "http://www.saidwhat.co.uk/proverb/viewall.php";
+    private App() throws IOException {
+        new PhrasesOrgScraper("https://www.phrases.org.uk/meanings/phrases-and-sayings-list.html", "parts/sayings.txt");
+        new PhrasesOrgScraper("https://www.phrases.org.uk/meanings/proverbs.html", "parts/proverbs.txt");
+        new SaidWhatScraper("http://www.saidwhat.co.uk/proverb/viewall.php", "parts/proverbs-2.txt");
 
-    private App() throws Exception {
-        File output = new File("output.txt");
-
-        createFileAndDeleteIfExists(output);
-
-        try (FileWriter fw = new FileWriter(output)) {
-            try (BufferedWriter writer = new BufferedWriter(fw)) {
-
-                // Get the data for a verse
-                Document doc = loadHTML();
-
-                // Skip this verse if there is no data
-                if (doc == null) {
-                    return;
-                }
-
-                parseText(doc, (s) -> {
-                    try {
-                        writer.write(s);
-                        writer.write("\n");
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                });
-            }
-        }
+        combineFiles(
+                "parts/sayings.txt",
+                "parts/proverbs.txt",
+                "parts/proverbs-2.txt"
+        );
     }
 
     /**
-     * Checks if the output file exists and if it does deletes it and creates it again
+     * Combines all files into one big file for the AI to train on
      *
-     * @param file
-     *         the target file
+     * @param filenames
+     *         The names of the files to combine into the output
      *
      * @throws IOException
-     *         when something goes wrong
+     *         When a disk error occurs
      */
-    private void createFileAndDeleteIfExists(File file) throws IOException {
-        if (file.exists()) {
-            file.delete();
+    private void combineFiles(String... filenames) throws IOException {
+        Set<String> finalFile = new HashSet<>();
+        File output = new File("output.txt");
+
+        if (output.exists()) {
+            output.delete();
         }
 
-        file.createNewFile();
-    }
+        output.createNewFile();
 
-    /**
-     * Gets the loaded document and parses it into the saying that we need
-     *
-     * @param doc
-     *         The html document
-     * @param cb
-     *         The callback that gets called when we need to write something to the file
-     */
-    private void parseText(Document doc, Consumer<String> cb) {
-        final String[] items = doc.select("div#centercontent").html().split("\n");
+        for (String filename : filenames) {
+            File f = new File(filename);
+            finalFile.addAll(
+                    Files.readAllLines(f.toPath())
+            );
+        }
 
-        System.out.println(items.length);
-
-        for (String item : items) {
-            if (item.startsWith("<br>")) {
-                final String parsed = item.replaceFirst("<br>", "").trim();
-
-                if (!parsed.isBlank()) {
-                    cb.accept(parsed);
-                }
+        try (FileWriter fw = new FileWriter(output, StandardCharsets.UTF_8)) {
+            try (BufferedWriter writer = new BufferedWriter(fw)) {
+                finalFile.stream()
+                        .sorted()
+                        .collect(Collectors.toList())
+                        .forEach((s) -> {
+                            try {
+                                writer.write(s);
+                                writer.write("\n");
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        });
             }
         }
     }
 
-    /**
-     * Requests json data from the website and returns it as json object
-     *
-     * @return a json object with the data or null
-     */
-    private Document loadHTML() {
-        Request request = new Request.Builder()
-                .url(BASE_URL)
-                .get()
-                .build();
-
-        try (Response response = CLIENT.newCall(request).execute()) {
-            //noinspection ConstantConditions
-            Document json = parseHTML(response.body().string());
-            // Close the response when we are done
-            response.close();
-            return json;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    /**
-     * Parses a response from the api to a Document
-     *
-     * @param in
-     *         the input html
-     *
-     * @return the parsed html document
-     */
-    private Document parseHTML(String in) {
-        if (in == null || in.equalsIgnoreCase("NULL")) {
-            return null;
-        }
-
-        return Jsoup.parse(in);
-    }
-
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         new App();
     }
 }
