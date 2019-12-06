@@ -80,7 +80,10 @@ public abstract class BaseScraper<T> {
             try (FileWriter fw = new FileWriter(output, StandardCharsets.UTF_8)) {
                 try (BufferedWriter writer = new BufferedWriter(fw)) {
 
-                    this.getUsableText().forEach((s) -> {
+                    this.getUsableText()
+                            .stream()
+                            .filter((s) -> s.split(" ").length > 1)
+                            .forEach((s) -> {
                         try {
                             writer.write(s);
                             writer.write("\n");

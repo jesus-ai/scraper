@@ -1,4 +1,3 @@
-
 'March' phrases
 'Money' phrases
 'Scuse me while I kiss this guy
@@ -224,7 +223,6 @@ Abide with me
 About face
 About turn
 Above board
-Abracadabra
 Absence makes the heart grow fonder
 Absent without leave
 Absolute power corrupts absolutely
@@ -238,7 +236,6 @@ According to Hoyle
 Ace in the hole
 Achilles' heel
 Acid test
-Acronyms
 Across the board
 Act of God
 Act the giddy goat
@@ -267,7 +264,6 @@ Age of miracles is past
 Agree to disagree
 Agree, For The Law is Costly
 Aid and abet
-Aide
 Ain't over till the fat lady sings
 Air kiss
 Air quotes
@@ -363,7 +359,6 @@ Army marches on its stomach
 Ars longa, vita brevis
 Art has no enemy but ignorance
 Artificial intelligence is no match for natural stupidity
-Arty
 As X as Y
 As alike as two peas in a pod
 As bald as a coot
@@ -419,7 +414,6 @@ As you make your bed, so must you lie in it
 As you make your bed, so you must lie upon it
 As you sow so shall you reap
 As you sow, so shall you reap
-Asap
 Ashes to ashes dust to dust
 Ask a silly question and you get a silly answer
 Ask a silly question and you'll get a silly answer
@@ -438,7 +432,6 @@ Away with the fairies
 Baby blues
 Baby boomer
 Baby father
-Back
 Back of beyond
 Back the field
 Back to basics
@@ -447,7 +440,6 @@ Back to the drawing board
 Back to the future
 Backroom boy
 Backward in coming forward
-Bacon
 Bad books
 Bad egg
 Bad hair day
@@ -466,7 +458,6 @@ Bandy words
 Bane of your life
 Bang on about
 Baptism of fire
-Barge
 Barking dog never bites
 Barking dogs seldom bite
 Barking mad
@@ -499,7 +490,6 @@ Beauty is only skin deep
 Beauty without virtue is a flower without perfume
 Beck and call
 Bed of roses
-Bee
 Bee in your bonnet
 Bee's knees
 Beef and reef
@@ -510,7 +500,6 @@ Beer before wine is fine Wine before beer makes you feel queer!
 Beer goggles
 Beer is proof that God loves us and wants us to be happy
 Bees that have honey in their mouths have stings in their tails
-Beetle
 Before enlightenment, I chopped wood and carried water; after enlightenment, I chopped wood and carried water.
 Before the fact
 Before you can say Jack Robinson
@@ -530,7 +519,6 @@ Below the belt
 Below the salt
 Belt and braces
 Belt up
-Best
 Best bib and tucker
 Best defence is a good offence
 Best is the enemy of the good
@@ -587,7 +575,6 @@ Big wig
 Bigger they are, the harder they fall
 Bigger, the better
 Bill Stickers is innocent
-Billy
 Billy no mates
 Binge drinking
 Bird in the hand is worth two in the bush
@@ -597,7 +584,6 @@ Bite the bullet
 Bite the dust
 Bitter end
 Bitter pills may have blessed effects
-Black
 Black as Newgate's knocker
 Black sheep of the family
 Blast from the past
@@ -606,28 +592,23 @@ Bless you! after a sneeze
 Blessed are the peacemakers
 Blessings Are Not Valued Until They Are Gone
 Blethers say nought
-Blind
 Blind leading the blind
-Bling
 Blonde bombshell
 Blood and thunder
 Blood is thicker than water
 Blood toil tears and sweat
 Blood, sweat and tears
-Bloody
 Blot on the landscape
 Blow a raspberry
 Blow your mind
 Blow your own trumpet
 Blown to smithereens
-Blue
 Blue are the hills that are far away
 Blue blood
 Blue moon Once in a
 Bob's your uncle
 Bode well
 Bodice ripper
-Body
 Body surfing
 Bog standard
 Bold as brass
@@ -637,7 +618,6 @@ Bone idle
 Bone up on
 Booby prize
 Booby trap
-Boogie
 Books and friends should be few and good
 Booze cruise
 Born again
@@ -646,12 +626,10 @@ Born within the sound of Bow Bells
 Borrowed Garments Never Fit Well
 Boss eyed
 Bottle out
-Bottom
 Bottom drawer
 Bottom line is the bottom line
 Bought the farm
 Bowled a maiden over
-Box
 Box and Cox
 Box of tricks
 Boxing Day
@@ -669,7 +647,6 @@ Brevity is the soul of wit
 Bricks and clicks
 Bring home the bacon
 Broad in the beam
-Broke
 Broken in two
 Bronx cheer
 Brook no truck with
@@ -677,14 +654,12 @@ Brown as a berry
 Browned off
 Brownie points
 Brummagem screwdriver
-Brush
 Bubble and squeak
 Buck stops here
 Bucket list
 Buckle down
 Bugger Bognor!
 Buggins' turn
-Bullet
 Bums on seats
 Bun in the oven
 Bunch of fives
@@ -700,7 +675,6 @@ Butt end of the stick
 Butter no parsnips
 Butter side down
 Butter wouldn't melt in his mouth
-Butterfingers
 By and large
 By dint of
 By gum
@@ -720,9 +694,7 @@ Can't be overestimated/can't be underestimated
 Can't hold a candle to
 Canteen culture
 Canterbury pace
-Carbon
 Carbon footprint
-Card
 Carey Street
 Carpe diem
 Carpe diem Pluck the day; Seize the day
@@ -772,9 +744,6 @@ Chinese whispers
 Chinless wonder
 Chip off the old block
 Chip on your shoulder
-Chit
-Chock
-Chop
 Chop and change
 Chow down
 Christmas box
@@ -787,10 +756,8 @@ Cleanliness is next to Godliness
 Cleanliness is next to godliness
 Clear blue water
 Cleft stick
-Cliff
 Climb on the bandwagon
 Cloak and dagger
-Clod
 Clog up
 Close quarters
 Close your eyes and think of England
@@ -800,17 +767,13 @@ Clothes maketh the man
 Cloud cuckoo land
 Cloud nine
 Club sandwich
-Clue
 Clutch at straws
 Coals to Newcastle
 Coat of many colours
 Cobbler always wears the worst shoes
-Cobblers
-Cock
 Cock a snook
 Cock and bull story
 Cockney rhyming slang
-Codswallop
 Cogito ergo sum
 Coin a phrase
 Cold as any stone
@@ -821,7 +784,6 @@ Cold hands, warm heart
 Cold shoulder
 Cold turkey
 Colder than a witch's tit
-Collywobbles
 Colour up
 Come a cropper
 Come clean
@@ -845,12 +807,10 @@ Cookie cutter
 Cool Britannia
 Cool as a cucumber
 Cop an attitude
-Copper
 Cor blimey
 Cordon bleu
 Corporations have neither bodies to be punished nor souls to be damned
 Cost an arm and a leg
-Cotton
 Cotton on to
 Count your blessings
 Count your chickens before they are hatched
@@ -860,8 +820,6 @@ Country bumpkin
 Course of true love never did run smooth
 Cowards may die many times before their death
 Crack of doom
-Crackpot
-Crapper
 Crime doesn't pay
 Crocodile tears
 Crop up
@@ -907,7 +865,6 @@ Dead ringer
 Death is the great leveller
 Death pays all debts
 Delusions of grandeur
-Derring
 Designer stubble
 Desperate Diseases Call for Desperate Remedies
 Deus ex machina
@@ -922,8 +879,6 @@ Devil's advocate
 Diamond in the rough
 Diamond is forever
 Diamonds cut diamonds
-Dicky
-Die
 Die has been cast
 Different kettle of fish
 Different strokes for different folk
@@ -957,7 +912,6 @@ Dog is a man's best friend
 Dog's bollocks
 Dog's breakfast
 Dog's dinner
-Doldrums
 Dollars to doughnuts
 Don't answer back
 Don't bite the hand that feeds you
@@ -1028,7 +982,6 @@ Dreams of empire
 Dressed to the nines
 Drink like a fish
 Driving while black
-Drop
 Drop in the bucket
 Dropping like flies
 Drowning man will clutch at a straw
@@ -1038,11 +991,9 @@ Due to the presence of fools, wise people stand out
 Dumb blonde
 Dump husband in September, you have to get rid of the spiders
 Dust up
-Dutch
 Dutch courage
 Duvet day
 Each to their own
-Ear
 Ear candy
 Early bird catches the worm
 Early to bed and early to rise makes a man healthy, wealthy and wise
@@ -1064,7 +1015,6 @@ Economical with the truth
 Eeny, meeny, miny, mo
 Egg on
 Eighty six
-Elbow
 Elementary my dear Watson
 Elephant in the room
 Emperor's new clothes
@@ -1080,7 +1030,6 @@ Enough is enough
 Eponymous Phrases
 Et tu, Brute
 Ethnic cleansing
-Euphemisms
 Even a clock that does not work is right twice a day
 Even a worm will turn
 Even at the turning of the tide
@@ -1131,7 +1080,6 @@ Facts are stubborn things
 Faff about
 Fag end
 Failing to plan is planning to fail
-Faint
 Faint heart never won fair lady
 Fair and square
 Fair dinkum
@@ -1139,7 +1087,6 @@ Fair exchange is no robbery
 Fair play
 Fair to middling
 Fair without , false within
-Fairy
 Fait accompli
 Faith will move mountains
 Fall from grace
@@ -1157,7 +1104,6 @@ Fancy pants
 Fanny Adams
 Far be it from me
 Far from the madding crowd
-Farmers
 Fashion victim
 Fast and loose
 Fast asleep
@@ -1177,7 +1123,6 @@ Female of the species is more deadly than the male
 Female of the species is more deadly then the male
 Fend for yourself
 Fend off
-Fiddlesticks
 Fiddling while Rome burns
 Fie, foh, fum, I smell the blood of an Englishman
 Field day
@@ -1215,7 +1160,6 @@ Fit as a fiddle
 Fits and starts
 Fits to a tee
 Five o'clock shadow
-Fixer
 Flash in the pan
 Flat out
 Flattery will get you nowhere
@@ -1291,7 +1235,6 @@ From the sublime to the ridiculous is only one step
 From the sweetest wine the tartest vinegar
 Fruit out of season, sorrow out of reason
 Fruits of your loins
-Fuddy
 Full Monty
 Full of hope
 Full of piss and vinegar
@@ -1299,7 +1242,6 @@ Full tilt
 Full to the gunwales
 Funny farm
 Fuzzy wuzzy
-GOLF
 Gad zooks or gadzooks
 Game is afoot
 Game is up
@@ -1311,7 +1253,6 @@ Genius is an infinite capacity for taking pains
 Genius is one percent inspiration and 99 percent perspiration
 Genius is one percent inspiration, ninety
 Gentle is that gentle does
-Get
 Get a word in edgeways
 Get down to brass tacks
 Get medieval
@@ -1334,7 +1275,6 @@ Giddy goat
 Gie yer tongue mair holidays nor yer heid
 Gild the lily
 Gilt off the gingerbread
-Ginger
 Ginger up
 Ginned up
 Give Neither Counsel Nor Salt till You Are Asked For It
@@ -1353,7 +1293,6 @@ Giving me gyp
 Glass ceiling
 Gloom and doom
 Gluttony kills more than the sword
-Go
 Go Dolally
 Go along for the ride
 Go and boil your head
@@ -1438,22 +1377,18 @@ Great unwashed
 Greedy folks have long arms
 Green eyed monster
 Gregory Peck
-Gridlock
 Grind to a halt
 Grinning like a Cheshire cat
 Grist to the mill
 Grow your own dope - plant a man!
 Growing pains
-Gry
 Guinea pig
 Gung ho
-Gussied
 Gut No Fish Till You Get Them
 Guts for garters
 Hair of the dog that bit you
 Hairy eyeball
 Halcyon days
-Half
 Half a loaf is better than no bread
 Half inch
 Hand over fist
@@ -1463,7 +1398,6 @@ Handle with kid gloves
 Hands down
 Handsome is as handsome does
 Hanged, drawn and quartered
-Hanky
 Happiness is not a state of mind, but a manner of travelling
 Happiness is wanting what you have - not having what you want
 Happy as Larry
@@ -1554,18 +1488,14 @@ Heavens to Betsy
 Heavens to Murgatroyd
 Heavy metal
 Hedge your bets
-Heebie
 Hell has no fury like a woman scorned
 Hell hath no fury like a woman scorned
 Hell or high water
 Hell's bells
-Helter
 Hem and haw
 Here lies one whose name is writ in water
 Het up
 Hiding to nothing
-Higgledy
-High
 High and dry
 High and mighty
 High as a kite
@@ -1583,31 +1513,26 @@ Hit the ground running
 Hit the hay
 Hit the nail on the head
 Hither and yon
-Hobby
 Hobson's choice
 Hocus pocus
 Hoi polloi
 Hoist with your own petard
-Hoity
 Hold with the hare and run with the hounds
 Hold your horses
 Hole in one
 Home is where the heart is
 Home is where you hang your hat
 Home sweet home
-Homonyms
 Honesty is the best policy
 Honey catches more flies than vinegar
 Honour among thieves
 Hooray Henry
 Hope springs eternal
-Horse
 Horse and cart
 Horse feathers
 Horse's mouth
 Horse, a horse, my kingdom for a horse
 Horses for courses
-Hot
 Hot off the press
 Hot on the heels
 House divided against itself cannot stand
@@ -1618,10 +1543,8 @@ How are the mighty fallen?
 How do you do?
 How now brown cow?
 How sharper than a serpent's tooth it is to have a thankless child
-Hugger
 Hung, drawn and quartered
 Hunger is the best sauce
-Hunky
 Hunt and peck
 Husband is always the last to know
 Hush puppies
@@ -1795,16 +1718,15 @@ Its a wise child that knows its own father
 Its only rock n roll but I like it
 Its too late to shut the stable door after the horse has bolted
 Ivory tower
-Jack
 Jack Palancing
 Jack Robinson
 Jack in the box
 Jack of all trades, master of none
+Jack tar
 Jack the lad
 Jam tomorrow
 Jam tomorrow and jam yesterday, but never jam today
 Jerry built
-Jet
 Jimmy Horner
 Jimmy Riddle
 Jobs for the boys
@@ -1845,12 +1767,10 @@ Keep your nose to the grindstone
 Keep your pecker up
 Keep your powder dry
 Keeping up with the Joneses
-Keepy
 Kettle of fish
 Khyber pass
 Kick the bucket
 Kick your heels
-Kickin'
 Kill not the goose that lays the golden egg
 Kill two birds with one stone
 Kilroy was here
@@ -1859,8 +1779,6 @@ Kiss and make up
 Kiss and tell
 Kiss me Hardy
 Kith and kin
-Knee
-Knick
 Knight in shining armour
 Knock back
 Knock into a cocked hat
@@ -1874,18 +1792,15 @@ Knowing is not enough; We must Apply Willing is not enough; We must Do
 Knuckle down
 Knuckle under
 Kowtow to
-La
 La dolce vita
 Labour of love
 Labourer is worthy of his hire
-Lackadaisical
 Ladies' room
 Lager frenzy
 Laid out in lavender
 Lamb to the slaughter
 Lame duck
 Land of nod
-Lardy
 Lark about
 Last but not least
 Last straw
@@ -1893,14 +1808,11 @@ Latin Phrases
 Laugh and the world laughs with you, cry and you cry alone
 Laugh and the world laughs with you, weep and you weep alone
 Laugh like a drain
-Laughing
 Laughter is the best medicine
 Laughter is the closest distance between two people
-Laurels
 Law is an ass
 Lay it on with a trowel
 Lazy hands make a man poor, but diligent hands bring wealth
-Lead
 Lead balloon
 Lean liberty is better than fat slavery
 Lear from the past, Live for today Look for tomorrow, take a nap this afternoon
@@ -1933,7 +1845,6 @@ Let's roll
 Level playing field
 Lick and a promise
 Lick into shape
-Lickety
 Lie low
 Lies, damned lies and statistics
 Life after death
@@ -1968,7 +1879,6 @@ Like the clappers
 Like the measles, love is most dangerous when it comes late in life
 Like turkeys voting for Christmas
 Like two peas in a pod
-Lily
 Line up in alphabetical order
 Lions led by donkeys
 Listen to advice and accept instruction, and in the end you will be wise
@@ -2027,7 +1937,6 @@ Love that dare not speak its name
 Love thy neighbour as thy self
 Love thy neighbour as thyself
 Love will find a way
-Loved
 Loving life is living life to the fullest
 Lucky at cards, unlucky in love
 Lunatic fringe
@@ -2078,7 +1987,6 @@ Marriages are made in heaven
 Marry in haste, and repent at leisure
 Marry in haste, repent at leisure
 May you live in interesting times
-McCoy
 Mea culpa
 Meat and drink
 Meat and two veg.
@@ -2106,17 +2014,14 @@ Mind your Ps and Qs
 Mind your own business
 Mind's ear
 Mind's eye
-Mini-skirt
 Ministering angel shall my sister be
 Mint condition
 Misery acquaints a man with strange bedfellows
 Misery loves company
-Misquotes
 Miss is as good as a mile
 Moaning Minnie
 Moderation in all things
 Monday's child is fair of face
-Mondegreens
 Money doesn't grow on trees
 Money for old rope
 Money is the root of all evil
@@ -2126,7 +2031,6 @@ Money makes the world go round
 Money talks
 Monstrous regiment of women
 Montezuma's Revenge
-Monty
 Moot point
 Morbid obesity
 More bang for your buck
@@ -2143,7 +2047,6 @@ Mother country
 Mother knows best
 Motivation is what gets you started habit is what keeps you going
 Motley crew
-Mouth
 Movable feast
 Movers and shakers
 Moving finger writes
@@ -2151,7 +2054,6 @@ Moving the goalposts
 Much Ado about Nothing
 Much of a muchness
 Much too much
-Mud
 Mull something over
 Multitude of sins
 Mum's the word
@@ -2175,7 +2077,6 @@ My salad days
 My stars and garters
 Ménage à trois
 Nail your colours to the mast
-Namby
 Name and shame
 Name is mud
 Nasty, brutish and short
@@ -2191,9 +2092,7 @@ Needs must when the devil drives
 Neither a borrower nor a lender be
 Neither fish nor flesh, nor good red herring
 Neither here nor there
-Nest
 Nest of vipers
-Never
 Never be afraid to sit awhile and think
 Never choose bedlinen or a wife by candlelight
 Never eat an oyster unless there is an R in the month
@@ -2230,8 +2129,6 @@ Nine days' wonder
 Nine tailors make a man
 Nip and tuck
 Nip in the bud
-Nitty
-No
 No Good Building Without a Good Foundation
 No accounting for tastes
 No dice
@@ -2265,14 +2162,12 @@ No use crying over spilt milk
 No use locking the stable door after the horse has bolted
 No way, Jose
 No wind, no waves
-Nod
 Nod is as good as a wink
 Nod's as good as a wink to a blind horse
 None but the brave deserve the fair
 None but the wearer knows where the shoe pinches
 None so blind as those who will not see
 None so deaf as those who will not hear
-Norange
 Nosy parker
 Not a dicky
 Not by a long chalk
@@ -2296,19 +2191,15 @@ Now is the winter of our discontent
 Nowt so queer as folk!
 Nth degree
 Nul points
-Nutshell
 O Romeo, Romeo! wherefore art thou Romeo?
 O ye, of little faith
 Odds bodkins
 Off his own bat
 Off the record
 Off with his head
-Offing
 Oh, my stars and garters
 Oh, they have slain the Earl of Moray and Lady Mondegreen
 Oil and water don't mix
-Okay
-Okey
 Old as Methuselah
 Old as the hills
 Old chestnut
@@ -2351,7 +2242,6 @@ Once in a blue moon
 Once in a while, right in the middle of an ordinary life, love gives us a fairy tale
 Once more unto the breach, dear friends, once more
 Once seen never forgotten
-One
 One beats the bush, another takes the bird
 One cannot quarrel without an opponent
 One fell swoop
@@ -2386,7 +2276,6 @@ Only fools and horses work
 Only mad dogs and englishmen go out in the midday sun
 Only time will tell
 Only when all contribute their firewood can they build up a strong fire
-Oops
 Open season
 Opera ain't over till the fat lady sings
 Opportunities always look bigger going than coming
@@ -2394,7 +2283,6 @@ Opportunity makes a thief
 Opportunity never knocks twice at any man's door
 Opportunity seldom knocks twice
 Opposites attract
-Ough
 Ounce of prevention is worth a pound of cure
 Out of sight
 Out of sight, out of mind
@@ -2403,14 +2291,11 @@ Out of the blue
 Out of the jaws of death
 Out of the mouths of babes and sucklings
 Out on a limb
-Over
 Over a barrel
 Over the moon
 Over the top
 Overpaid, oversexed, and over here
 Oxo cube
-P.D.Q.
-POSH
 Packed to the gunwales
 Paddle your own canoe
 Pain in the neck
@@ -2433,7 +2318,6 @@ Pearls of wisdom
 Pears for your heirs
 Peeping Tom
 Peg out
-Pell
 Pen is mightier than sword
 Pennies from heaven
 Penny dreadful
@@ -2455,10 +2339,8 @@ Physician heal thyself
 Physician, heal thyself
 Pick 'n' mix
 Pick your friends like you pick your fruit
-Picture
 Picture is worth a thousand words
 Picture paints a thousand words
-Pie
 Pie in the sky
 Piece of cake
 Piece of piss
@@ -2467,11 +2349,8 @@ Pig and whistle
 Pig in a poke
 Pig's back
 Pig's ear
-Pigeon
-Piggyback
 Pigs might fly
 Pin money
-Pip
 Pipe down
 Pipe dream
 Piping hot
@@ -2495,10 +2374,8 @@ Play the giddy goat
 Play the race card
 Play with fire
 Pleased as Punch
-Plug
 Plugged nickel
 Poetic justice
-Point
 Point Percy at the porcelain
 Point to point
 Politically correct
@@ -2525,7 +2402,6 @@ Practice makes perfect
 Practice what you preach
 Praying at the porcelain altar
 Preaching to the choir
-Preposterous
 Press into service
 Pretty as a picture
 Pretty kettle of fish
@@ -2541,7 +2417,6 @@ Procrastination is the thief of time
 Promises are like babies Easy to make, hard to deliver
 Proof of the pudding is in the eating
 Prophet is not recognized in his own land
-Proverbs
 Ps and Qs
 Pull in your horns
 Pull out all the stops
@@ -2576,7 +2451,6 @@ Quality is an excuse for lack of quantity
 Quality is better than quantity
 Quality time
 Quantum leap
-Quarter
 Queer Street
 Queer as a nine bob note
 Queer the pitch
@@ -2584,11 +2458,9 @@ Quick and the dead
 Quicker than lager turns to piss
 Quickly come, quickly go
 Quid pro quo
-Quotations
 Rabbit and pork
 Rack and ruin
 Rack your brains
-Rag
 Rag, tag and bobtail
 Rain before seven, fine before eleven
 Rain, Rain, go away, come back another day
@@ -2605,7 +2477,6 @@ Read between the lines
 Read the riot act
 Reading between the lines
 Real McCoy
-Red
 Red herring
 Red in the face
 Red in tooth and claw
@@ -2628,15 +2499,11 @@ Richard the Third
 Riddle wrapped up in an enigma
 Ride a cock
 Riding shotgun
-Riff
 Right between the eyes
 Righteousness exalts a nation but sin is a disgrace to any people
-Riley
-Ring
 Ring a ring o'roses, a pocketful of posies, atishoo, atishoo, all fall down
 Ring down the curtain
 Ring the changes
-Rinky
 Rise and shine
 Rising tide lifts all boats
 Road apples
@@ -2659,7 +2526,6 @@ Route one
 Rub of the green
 Rule of thumb
 Rum do
-Rumpy
 Run a mile
 Run amok
 Run of the mill
@@ -2681,15 +2547,11 @@ Savoir faire
 Say cheese
 Say goodnight Gracie
 Saying is one thing; doing another
-Scapegoat
-Scarper
-Scot
 Scott Sir Walter
 Screw your courage to the sticking place
 Sea change
 Sealed with a loving kiss
 Season of mists and mellow fruitfulness
-Second
 Second place is first loser
 Security blanket
 See Naples and die
@@ -2707,7 +2569,6 @@ Separate the sheep from the goats
 Set a thief to catch a thief
 Set one's cap at
 Set your teeth on edge
-Seven
 Seven-fifths of all people do not understand fractions
 Sex and shopping
 Sex takes up the least amount of time and causes the most amount of trouble
@@ -2717,17 +2578,13 @@ Shake a leg
 Shakers and movers
 Shakespeare phrases and sayings of
 Shall I compare thee to a summer's day?
-Shambles
 Shanks' mare/shanks' pony
 Share and share alike
 Share and share alike!
-Shebang
-Shilly
 Ship shape and Bristol fashion
 Shit end of the stick
 Shit for brains
 Shiver my timbers
-Shoddy
 Shoemaker's son always goes barefoot
 Shoot through
 Shopping is a therapy
@@ -2754,7 +2611,6 @@ Silly Billy
 Silly season
 Silver bullet
 Silver lining
-Similes
 Sinking ship
 Sir Walter Scott phrases coined by
 Sitting pretty
@@ -2783,7 +2639,6 @@ Smooth seas do not make skillful sailors
 Snug as a bug in a rug
 So long as you do your best in life, whatever happens will be for the best
 So sue me
-Soap
 Sod's Law
 Soft answer turneth away wrath
 Softly, softly, catchee monkey
@@ -2810,7 +2665,6 @@ Speak of the Devil
 Speak softly and carry a big stick
 Speak when you are spoken to
 Special relationship
-Spelling
 Spend a penny
 Spick and span
 Spill the beans
@@ -2818,10 +2672,8 @@ Spin doctor
 Spitting feathers
 Spitting image
 Split second timing
-Spoonerisms
 Spots before the eyes
 Spring forward, fall back
-Spruce
 Square meal
 Squeaky bum time
 Squeaky wheel gets the grease
@@ -2829,7 +2681,6 @@ St Swithins Day, if thou does rain, for forty days it will remain, St Swithins d
 Stand and deliver
 Stand up guy
 Standing on the shoulders of giants
-Star
 Star turn
 Stark, raving mad
 Stars and garters
@@ -2851,13 +2702,11 @@ Stitch in time saves nine
 Stone is heavy and sand a burden, but provocation by a fool is heavier than both
 Stone the crows
 Stone's throw
-Stony
 Stool pigeon
 Storm in a teacup
 Straight as a die
 Straight from the horse's mouth
 Strain at the leash
-Strait
 Strait and narrow
 Stranger danger
 Stranger than fiction
@@ -2876,7 +2725,6 @@ Survival of the fittest
 Suspension of disbelief
 Swan song
 Sweet Fanny Adams
-Sweetheart
 Swim in the sea
 Swing for you
 Swing the lead
@@ -2912,9 +2760,7 @@ Talk the talk
 Talk through one's hat
 Talk to the hand
 Tall story
-Tanstaafl
 Tattoo phrases and sayings
-Tawdry
 Tea leaf
 Teachers open the door, but you must enter by yourself
 Teaching of others teacheth the teacher
@@ -2928,7 +2774,6 @@ That which does not kill us makes us stronger
 That's all folks!
 That's all she wrote
 That's one small step for a man, a giant leap for mankind
-The
 The Absent are Always Wrong
 The Ass Loaded With Gold Still Eats Thistles
 The Best Fish Swim Near the Bottom
@@ -3231,7 +3076,6 @@ Tinker's damn
 Tis better to get things for free, than to work up a sweat
 Tissue of lies
 Tit for tat
-Titfer
 Tits up
 To a T
 To all intents and purposes
@@ -3261,9 +3105,7 @@ To thine own self be true
 To travel hopefully is a better thing than to arrive
 To whom God gives, to him also the people give
 Toast of the town
-Toe
 Toe the line
-Toffee
 Tommy Atkins
 Tomorrow is another day
 Tomorrow never comes
@@ -3275,17 +3117,14 @@ Too many chiefs and not enough indians
 Too many clicks spoil the browse
 Too many cooks spoil the broth
 Too much of a good thing
-Toodle
 Tooth and nail
 Top dog
 Top drawer
 Top notch
-Topsy
 Total shambles
 Touch and go
 Touch with a barge
 Touch wood
-Touchy
 Tout de suite
 Tower of strength
 Train a child in the way he should go, and when he is old he will not turn from it
@@ -3347,7 +3186,6 @@ Up to a point
 Up to snuff
 Upper crust
 Upper hand
-Ups
 Upset the apple
 Upside down
 Urban myth
@@ -3366,7 +3204,6 @@ Vice versa
 Vicious circle
 Virtue is its own reward
 Virtues all agree, but vices fight one another
-Vis
 Visit the ladies' room
 Visit your aunt, but not every day of the year
 Volunteer is worth twenty pressed men
@@ -3398,7 +3235,6 @@ Weakest link
 Wear the trousers
 Wear your heart on your sleeve
 Weasel words
-Wee
 Well heeled
 Well read
 Wet behind the ears
@@ -3440,17 +3276,14 @@ Whistle down the wind
 White as snow
 White bread
 White elephant
-Whole
 Whole is greater than the sum of the parts
 Whole kit and caboodle
 Whole nine yards
 Whole shebang
 Whom the Gods love die young
-Whoops
 Why does bread always fall butter side down?
 Why keep a dog and bark yourself?
 Why should the Devil have all the best tunes?
-Wick
 Wide berth
 Wild and woolly
 Wild goose chase
@@ -3484,7 +3317,6 @@ Work expands so as to fill the time available
 Worrying never did anyone any good
 Worse for wear
 Worth one's salt
-Wotcher
 Wouldn't touch with a barge
 Wreak havoc
 Writing is on the wall
@@ -3492,7 +3324,6 @@ Wrong end of the stick
 Wrong side of the blanket
 Yada yada
 Year dot
-Yellow
 Yellow Peril
 You are never too old to learn
 You are what you eat
@@ -3528,7 +3359,6 @@ Your money or your life
 Your name is mud
 Youth is wasted on the young
 Zero tolerance
-Zig
 [That] Rings a bell
 À la carte
 À la mode
