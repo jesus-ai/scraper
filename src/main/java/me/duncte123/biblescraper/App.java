@@ -6,14 +6,14 @@ package me.duncte123.biblescraper;
 import me.duncte123.biblescraper.scrapers.PhrasesOrgScraper;
 import me.duncte123.biblescraper.scrapers.SaidWhatScraper;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 /**
@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
  * Created on 04-11-2019
  */
 public class App {
-    private App() throws IOException {
+    private App() throws IOException, NoSuchAlgorithmException {
         new PhrasesOrgScraper("https://www.phrases.org.uk/meanings/phrases-and-sayings-list.html", "parts/sayings.txt");
         new PhrasesOrgScraper("https://www.phrases.org.uk/meanings/proverbs.html", "parts/proverbs.txt");
         new SaidWhatScraper("http://www.saidwhat.co.uk/proverb/viewall.php", "parts/proverbs-2.txt");
@@ -31,6 +31,8 @@ public class App {
                 "parts/proverbs.txt",
                 "parts/proverbs-2.txt"
         );
+
+        storeMd5Hash();
     }
 
     /**
@@ -44,13 +46,6 @@ public class App {
      */
     private void combineFiles(String... filenames) throws IOException {
         Set<String> finalFile = new HashSet<>();
-        File output = new File("output.txt");
-
-        if (output.exists()) {
-            output.delete();
-        }
-
-        output.createNewFile();
 
         for (String filename : filenames) {
             File f = new File(filename);
@@ -59,8 +54,7 @@ public class App {
             );
         }
 
-        try (FileWriter fw = new FileWriter(output, StandardCharsets.UTF_8)) {
-            try (BufferedWriter writer = new BufferedWriter(fw)) {
+        useWriterForFile("output.txt", (writer) ->
                 finalFile.stream()
                         .sorted()
                         .collect(Collectors.toList())
@@ -71,12 +65,83 @@ public class App {
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-                        });
+                        })
+        );
+    }
+
+    /**
+     * Compiled from https://stackoverflow.com/questions/304268/getting-a-files-md5-checksum-in-java
+     *
+     * @throws IOException
+     *         File errors
+     * @throws NoSuchAlgorithmException
+     *         Should never happen
+     */
+    private void storeMd5Hash() throws IOException, NoSuchAlgorithmException {
+        File file = new File("output.txt");
+
+        InputStream fis = new FileInputStream(file);
+
+        byte[] buffer = new byte[1024];
+        MessageDigest complete = MessageDigest.getInstance("MD5");
+        int numRead;
+
+        do {
+            numRead = fis.read(buffer);
+            if (numRead > 0) {
+                complete.update(buffer, 0, numRead);
+            }
+        } while (numRead != -1);
+
+        fis.close();
+
+        byte[] b = complete.digest();
+        StringBuilder result = new StringBuilder();
+
+        for (byte value : b) {
+            result.append(Integer.toString((value & 0xff) + 0x100, 16).substring(1));
+        }
+
+        String hex = result.toString();
+
+        useWriterForFile("output.txt.md5", (writer) -> {
+            try {
+                writer.write(hex);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    /**
+     * Shortcut for writing to a file
+     *
+     * @param fileName
+     *         The filename to write to
+     * @param cb
+     *         Callback with the writer so we can write to it
+     *
+     * @throws IOException
+     *         When something goes wrong with writing
+     */
+    private void useWriterForFile(String fileName, Consumer<BufferedWriter> cb) throws IOException {
+        File file = new File(fileName);
+
+        if (file.exists()) {
+            file.delete();
+        }
+
+        file.createNewFile();
+
+
+        try (FileWriter fw = new FileWriter(file, StandardCharsets.UTF_8)) {
+            try (BufferedWriter writer = new BufferedWriter(fw)) {
+                cb.accept(writer);
             }
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
         new App();
     }
 }
