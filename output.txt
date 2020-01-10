@@ -660,6 +660,7 @@ Bucket list
 Buckle down
 Bugger Bognor!
 Buggins' turn
+Build a better mousetrap and the world will beat a path to your door
 Bums on seats
 Bun in the oven
 Bunch of fives
@@ -965,6 +966,7 @@ Double Dutch
 Double cross
 Double entendre
 Double whammy
+Double, double toil and trouble, fire burn, and cauldron bubble
 Doubt is the beginning not the end of wisdom
 Down at heel
 Down in the dumps
@@ -1653,6 +1655,7 @@ In the red
 In the same boat
 In vino veritas
 In your face
+Including, but not limited to
 Indian giver
 Indian summer
 Infra dig
@@ -2075,6 +2078,7 @@ My old Dutch
 My old china
 My salad days
 My stars and garters
+My way or the highway
 Ménage à trois
 Nail your colours to the mast
 Name and shame
@@ -3338,7 +3342,7 @@ You can't get blood out of a turnip
 You can't have your cake and eat it too
 You can't hold with the hare and run with the hounds
 You can't judge a book by its cover
-You can't make a silk purse from a sow's ear
+You can't make a silk purse out of a sow's ear
 You can't make an omelette without breaking eggs
 You can't make bricks without straw
 You can't run with the hare and hunt with the hounds
